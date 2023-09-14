@@ -53,10 +53,9 @@ const Home = () => {
                                             <p> $ Price: {course.salary}</p>
                                             <p> Credit: {course.Credit}hr</p>
                                         </div>
-                                        <div className=" text-center mt-4  bg-blue-600 rounded-lg py-2">
-                                            <button
-                                                onClick={() => handelSelect(course)}
-                                                className="btn  text-white">Select</button>
+                                        <div onClick={() => handelSelect(course)}
+                                         className=" text-center mt-4  bg-blue-600 rounded-lg py-2">
+                                            <button className="btn  text-white">Select</button>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +72,7 @@ const Home = () => {
 
                 {/* anthor on */}
 
-                <div className='w-1/3 border-2'>
+                <div className='w-1/3 '>
 
                     <Card SelectedCourses={SelectedCourses}>
 
