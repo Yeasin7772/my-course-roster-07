@@ -21,7 +21,7 @@
         "id": 3,
         "name": "Introduction to C++ for DSA",
         "title":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-        "image": "https://i.ibb.co/vvYNCY7/Rectangle-3.png",
+        "image": "https://i.ibb.co/V3Nk9Nk/Rectangle-2-4.png",
         "salary": 25000,
         "Credit": 10
     },
@@ -29,7 +29,7 @@
         "id": 4,
         "name": "Basic Data Structures",
         "title":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-        "image": "https://i.ibb.co/KVt9v24/Rectangle-2.png",
+        "image": "https://i.ibb.co/vvYNCY7/Rectangle-3.png",
         "salary": 25000,
         "Credit": 5
     },
@@ -37,7 +37,7 @@
         "id": 5,
         "name": "Introduction to OOP Python",
         "title":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-        "image": "https://i.ibb.co/Rvc67Cr/ar.jpg",
+        "image": "https://i.ibb.co/KVt9v24/Rectangle-2.png",
         "salary": 25000,
         "Credit": 5
     },

@@ -1,38 +1,71 @@
-import React from 'react';
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import Card from '../Card/Card';
 
 
 const Home = () => {
 
-    const []= 
+    const [allCourses, setAllCourses] = useState([])
+    const [SelectedCourses, setSelectedCourses] = useState([])
+
+    useEffect(() => {
+
+        fetch('./data.json')
+            .then(res => res.json())
+            .then(data => setAllCourses(data))
+
+
+
+    }, [])
+
+    const handelSelect = (course) => {
+        const newCourses = [...SelectedCourses, course]
+        console.log(newCourses);
+        setSelectedCourses(newCourses)
+
+    }
+
+    //console.log(allCourses);
 
     return (
         <div className='mt-20 '>
             {/* main container */}
-            <div className="container mx-auto flex">
+            <div className="container mx-auto flex gap-8">
 
                 {/* home container */}
                 <div className="w-2/3">
 
                     {/* card container */}
 
-                    <div className="grid grid-cols-3">
-                       
+                    <div className="grid grid-cols-3 gap-2 ">
 
-                        <div className="card card-compact bg-base-100 shadow-xl h-96 px-4">
-                            <figure><img className='' src="https://i.ibb.co/KVt9v24/Rectangle-2.png" /></figure>
-                            <div className="card-body py-6">
-                                <h2 className=" text-[#1C1B1B] text-lg font-semibold">Introduction to Algorithm</h2>
-                                <p className='text-[#1C1B1B99]'>It is a long established fact that a reader will be distracted by the readable
-                                     content of a page when looking at its layout.</p>
-                                     <div className='flex justify-between mt-3 text-[#1C1B1B99]'>
-                                        <p>Price : 25000</p>
-                                        <p>Credit : 2hr</p>
-                                     </div>
-                                <div className=" text-center mt-7 bg-blue-600 rounded-lg py-2">
-                                    <button className="btn  text-white">Select</button>
+
+                        {
+
+                            allCourses.map(course => (
+                                <div key={course.id} className="card card-compact bg-base-100 shadow-xl  px-2">
+                                    <figure><img className='' src={course.image} /></figure>
+                                    <div className="card-body">
+                                        <h2 className=" text-[#1C1B1B] text-base font-semibold">{course.name}</h2>
+                                        <p className='text-[#1C1B1B99]'>{course.title} </p>
+                                        <div className='flex justify-between mt-3 text-[#1C1B1B99]'>
+                                            <p> $ Price: {course.salary}</p>
+                                            <p> Credit: {course.Credit}hr</p>
+                                        </div>
+                                        <div className=" text-center mt-4  bg-blue-600 rounded-lg py-2">
+                                            <button
+                                                onClick={() => handelSelect(course)}
+                                                className="btn  text-white">Select</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            )
+                            )
+
+
+
+                        }
 
                     </div>
 
@@ -42,12 +75,15 @@ const Home = () => {
 
                 <div className='w-1/3 border-2'>
 
-                    <h1>hello</h1>
+                    <Card SelectedCourses={SelectedCourses}>
+
+                    </Card>
+
                 </div>
 
             </div>
 
-            
+
 
 
         </div>
