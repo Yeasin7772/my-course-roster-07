@@ -1,21 +1,46 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const Card = ({ SelectedCourses }) => {
+const Card = ({ selectedCourses,totalHour,remainingTime }) => {
     return (
-        <div>
-            <h2>Credit Hour Remaining 7 hr: {SelectedCourses.length}</h2>
+        <div className='w-80 '>
 
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card  bg-base-100 shadow-xl px-5 py-5  rounded-lg">
                 <div className="card-body ">
-                    <h2 className="card-title">Course Name:</h2>
-                    <p>We are using cookies for no reason.</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Accept</button>
-                        <button className="btn btn-ghost">Deny</button>
+                    <div className=' mb-5'>
+                        <h2 className='text-blue-600 text-base font-bold'>Credit Hour Remaining:  {remainingTime} </h2>
                     </div>
+
+                    <h2 className="card-title text-xl font-bold ">Course Name:</h2>
+
+
+
+                    {
+                        selectedCourses.map((course,idx) => (
+                            <div key={course.id} className=''>
+                                <ol>
+                                  
+                                    <li> {++idx}. {course.name}</li>
+                                    
+                                </ol>
+                            </div>
+
+                        ))
+                    }
+
+                    <div className='mt-8 border-t-2'>
+                        <h1>Total Credit Hour : {totalHour}</h1>
+                    </div>
+
+
                 </div>
             </div>
+
+
+
+
 
 
         </div>
