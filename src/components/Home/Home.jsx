@@ -28,7 +28,7 @@ const Home = () => {
         if (isExit) {
 
            
-            toast("Once a topic is added, it cannot be re-added!")
+            toast("All Ready Exit!")
         } else {
 
             selectedCourses.forEach(item => {
@@ -43,7 +43,7 @@ const Home = () => {
 
             if (count > 20) {
                 
-                toast("You do not have enough time!")
+                toast(" Error!! Not enough hours!")
             } else {
                 setTotalSalary(salary)
                 setTotalHour(count)
@@ -63,16 +63,16 @@ const Home = () => {
     //console.log(allCourses);
 
     return (
-        <div className='mt-20 '>
+        <div className='mt-20 container  mx-auto'>
             {/* main container */}
-            <div className="container mx-auto flex gap-12">
+            <div className=" sm:w-full lg:flex sm:flex-row  gap-12">
 
                 {/* home container */}
                 <div className="w-2/3">
 
                     {/* card container */}
 
-                    <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8  ">
+                    <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
 
 
                         {
@@ -112,7 +112,7 @@ const Home = () => {
 
                 {/* anther on */}
 
-                <div className='w-1/12 '>
+                <div className='w-2/12'>
 
                     <Card selectedCourses={selectedCourses}
                         remainingTime={remainingTime}
