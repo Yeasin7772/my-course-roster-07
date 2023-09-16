@@ -10,7 +10,7 @@ const Home = () => {
 
     const [allCourses, setAllCourses] = useState([])
     const [selectedCourses, setSelectedCourses] = useState([])
-    const [remainingTime, setRemainingTime] = useState(0)
+    const [remainingTime, setRemainingTime] = useState(20)
     const [totalHour, setTotalHour] = useState(0)
     const [totalSalary, setTotalSalary] = useState(0)
 
@@ -37,7 +37,7 @@ const Home = () => {
                
             })
 
-            console.log(count);
+            
 
             const totalRemainingTime = 20 - count
 
@@ -50,7 +50,7 @@ const Home = () => {
                 setRemainingTime(totalRemainingTime)
 
                 const newCourses = [...selectedCourses, course]
-                console.log(newCourses);
+                //console.log(newCourses);
                 setSelectedCourses(newCourses)
             }
 

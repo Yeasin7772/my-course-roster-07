@@ -11,7 +11,7 @@ const Card = ({ selectedCourses, totalHour, remainingTime, totalSalary }) => {
             <div className="card  bg-base-100 shadow-xl px-5 py-5  rounded-lg">
                 <div className="card-body ">
                     <div className=' mb-5 border-b-2 py-3 pt-4'>
-                        <h2 className='text-blue-600 text-lg font-bold'>Credit Hour Remaining:  {remainingTime} </h2>
+                        <h2 className='text-blue-600 text-lg font-bold'>Credit Hour Remaining:  {remainingTime} hr</h2>
                     </div>
 
                     <h2 className="card-title text-xl font-bold ">Course Name:</h2>
